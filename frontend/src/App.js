@@ -62,6 +62,12 @@ function App() {
                   </AdminRoute>
                 } />
                 
+                <Route path="/admin/resources/:id/edit" element={
+                  <AdminRoute>
+                    <CreateResource />
+                  </AdminRoute>
+                } />
+                
                 {/* Catch all route */}
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
