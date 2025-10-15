@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { format, addDays, startOfDay } from 'date-fns';
 import { resourcesAPI, bookingsAPI } from '../services/api';
 import { useSocket } from '../context/SocketContext';
@@ -7,7 +7,6 @@ import BookingModal from '../components/bookings/BookingModal';
 
 const ResourceSchedule = () => {
   const { id: resourceId } = useParams();
-  const navigate = useNavigate();
   const { socket, subscribeToBookingUpdates, unsubscribeFromBookingUpdates } = useSocket();
   
   const [resource, setResource] = useState(null);
@@ -195,15 +194,15 @@ const ResourceSchedule = () => {
 
           {resource && (
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center shadow-xl shadow-primary-500/30 text-3xl">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center shadow-xl shadow-primary-500/30 text-2xl sm:text-3xl lg:text-4xl">
                   🔬
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold text-white">{resource.name}</h1>
-                  <p className="text-gray-400">{resource.description}</p>
+                  <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">{resource.name}</h1>
+                  <p className="text-gray-400 text-sm sm:text-base lg:text-lg">{resource.description}</p>
                   <div className="flex items-center gap-2 mt-2">
-                    <span className="badge badge-info">
+                    <span className="badge badge-info text-xs sm:text-sm">
                       Capacity: {resource.capacity}
                     </span>
                   </div>

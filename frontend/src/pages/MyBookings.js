@@ -130,14 +130,14 @@ const MyBookings = () => {
     <div className="min-h-screen py-8 px-4">
       <div className="container-custom max-w-6xl">
         {/* Header */}
-        <div className="mb-8 animate-slide-up">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-primary-500 rounded-xl flex items-center justify-center shadow-xl shadow-accent-500/30">
-              <span className="text-3xl">📋</span>
+        <div className="mb-6 sm:mb-8 animate-slide-up">
+          <div className="flex items-center gap-3 sm:gap-4 mb-4">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-accent-500 to-primary-500 rounded-xl flex items-center justify-center shadow-xl shadow-accent-500/30">
+              <span className="text-2xl sm:text-3xl lg:text-4xl">📋</span>
             </div>
             <div>
-              <h1 className="text-4xl font-bold gradient-text">My Bookings</h1>
-              <p className="text-gray-400 text-lg">Manage your lab resource reservations</p>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text">My Bookings</h1>
+              <p className="text-gray-400 text-base sm:text-lg lg:text-xl">Manage your lab resource reservations</p>
             </div>
           </div>
         </div>

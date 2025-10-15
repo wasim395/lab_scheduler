@@ -20,6 +20,7 @@ const CreateResource = () => {
     if (isEditing) {
       fetchResource();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, isEditing]);
 
   const fetchResource = async () => {

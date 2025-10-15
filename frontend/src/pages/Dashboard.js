@@ -51,14 +51,14 @@ const Dashboard = () => {
     <div className="min-h-screen py-8 px-4">
       <div className="container-custom">
         {/* Header */}
-        <div className="mb-12 animate-slide-up">
-          <div className="flex items-center gap-4 mb-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center shadow-xl shadow-primary-500/30">
-              <span className="text-3xl">📅</span>
+        <div className="mb-8 sm:mb-12 animate-slide-up">
+          <div className="flex items-center gap-3 sm:gap-4 mb-4">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center shadow-xl shadow-primary-500/30">
+              <span className="text-2xl sm:text-3xl lg:text-4xl">📅</span>
             </div>
             <div>
-              <h1 className="text-4xl font-bold gradient-text">Dashboard</h1>
-              <p className="text-gray-400 text-lg">Browse and book available lab resources</p>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold gradient-text">Dashboard</h1>
+              <p className="text-gray-400 text-base sm:text-lg lg:text-xl">Browse and book available lab resources</p>
             </div>
           </div>
         </div>
@@ -92,20 +92,20 @@ const Dashboard = () => {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
               {resources.map((resource, index) => (
                 <div
                   key={resource._id}
-                  className="card card-hover p-6 group animate-slide-up"
+                  className="card card-hover p-5 sm:p-6 group animate-slide-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {/* Resource Icon */}
                   <div className="flex items-start justify-between mb-4">
-                    <div className="w-14 h-14 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-xl flex items-center justify-center text-3xl border border-primary-500/30 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-xl flex items-center justify-center text-2xl sm:text-3xl lg:text-4xl border border-primary-500/30 group-hover:scale-110 transition-transform duration-300">
                       {getResourceIcon(resource.name)}
                     </div>
-                    <div className="badge badge-info">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="badge badge-info text-xs sm:text-sm">
+                      <svg className="icon-xs" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                       {resource.capacity} {resource.capacity === 1 ? 'slot' : 'slots'}
@@ -113,19 +113,19 @@ const Dashboard = () => {
                   </div>
 
                   {/* Resource Info */}
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 group-hover:text-primary-400 transition-colors">
                     {resource.name}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-6 line-clamp-2">
+                  <p className="text-gray-400 text-xs sm:text-sm mb-5 sm:mb-6 line-clamp-2">
                     {resource.description || 'No description available'}
                   </p>
 
                   {/* Action Button */}
                   <Link
                     to={`/resources/${resource._id}/schedule`}
-                    className="btn btn-primary w-full group-hover:shadow-xl group-hover:shadow-primary-500/30"
+                    className="btn btn-primary w-full group-hover:shadow-xl group-hover:shadow-primary-500/30 text-sm sm:text-base"
                   >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
                     View Schedule
